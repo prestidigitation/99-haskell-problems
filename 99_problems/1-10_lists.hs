@@ -59,14 +59,17 @@ isPalindrome xs = reverse xs == xs
 
 
 -- Problem 7
--- 
+-- Flatten a nested list structure.
+-- Transform a list, possibly holding lists as elements into a `flat' list by replacing each list with its elements (recursively).
 
 
 
 -- Problem 8
 -- Eliminate consecutive duplicates of list elements.
-compress :: [a] -> [a]
-compress (x:xs) = if x /= (head xs) then (compress xs) else (compress (drop 1 xs))
--- [compressed | compressed <- all, x /= (\x -> head x) xs]
+compress :: (Eq a) => [a] -> [a]
+compress [] = []
+compress (x:xs) = if [x] == take 1 xs 
+                  then compress (x : drop 1 xs) 
+                  else x : compress xs
 
 
