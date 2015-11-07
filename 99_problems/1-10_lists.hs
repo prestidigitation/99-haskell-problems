@@ -58,3 +58,15 @@ isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome xs = reverse xs == xs
 
 
+-- Problem 7
+-- 
+
+
+
+-- Problem 8
+-- Eliminate consecutive duplicates of list elements.
+compress :: [a] -> [a]
+compress (x:xs) = if x /= (head xs) then (compress xs) else (compress (drop 1 xs))
+-- [compressed | compressed <- all, x /= (\x -> head x) xs]
+
+
