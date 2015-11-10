@@ -80,9 +80,10 @@ compress' (x:xs) = x : (compress $ dropWhile (== x) xs)
 -- Problem 9
 -- Pack consecutive duplicates of list elements into sublists. If a list contains repeated elements they should be placed in separate sublists.
 
---pack :: [a] -> [[a]]
---pack []     = error "empty list"
---pack (x:xs) = if [x] == take 1 xs
---              then x : pack xs
---              else pack xs
+pack :: Eq a => [a] -> [a]
+pack []     = error "empty list"
+pack (x:xs) = if [x] == take 1 xs
+              then x ++ pack xs
+              else x : pack xs
+
 
