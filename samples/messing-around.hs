@@ -43,3 +43,8 @@ smash (x:xs) = x ++ " " ++ smash xs
 elementAt :: [a] -> Int -> a
 elementAt [] _     = error "Empty list"
 elementAt (x:xs) n = if n == 1 then x else elementAt xs (n - 1)
+
+-- Problem 4
+myLength :: [a] -> Int
+myLength []     = 0
+myLength (x:xs) = 1 + myLength xs
