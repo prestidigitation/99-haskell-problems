@@ -48,3 +48,8 @@ elementAt (x:xs) n = if n == 1 then x else elementAt xs (n - 1)
 myLength :: [a] -> Int
 myLength []     = 0
 myLength (x:xs) = 1 + myLength xs
+
+-- Problem 5
+myReverse :: [a] -> [a]
+myReverse []     = []
+myReverse (x:xs) = myReverse xs ++ [x]
