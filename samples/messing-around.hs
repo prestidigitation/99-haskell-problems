@@ -38,3 +38,8 @@ smash :: [String] -> String
 smash [] = ""
 smash [x] = x
 smash (x:xs) = x ++ " " ++ smash xs
+
+-- Problem 3
+elementAt :: [a] -> Int -> a
+elementAt [] _     = error "Empty list"
+elementAt (x:xs) n = if n == 1 then x else elementAt xs (n - 1)
