@@ -57,3 +57,14 @@ myReverse (x:xs) = myReverse xs ++ [x]
 -- Problem 6
 isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome xs = if xs == reverse xs then True else False
+
+-- Problem 7
+-- data NestedList a = Elem a | List [NestedList a]
+-- myFlatten :: [Elem | List] -> [a]
+-- myFlatten []     = []
+-- myFlatten (x:xs) = myFlatten x + myFlatten xs
+
+-- Problem 8
+compress :: (Eq a) => [a] -> [a]
+compress []     = []
+compress (x:xs) = if [x] == take 1 xs then compress xs else x : compress xs
