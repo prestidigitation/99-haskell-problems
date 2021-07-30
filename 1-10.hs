@@ -11,3 +11,10 @@ myButLast [x] = error "No second to last element for singleton list!"
 myButLast (x:xs)
   | length xs == 1 = x
   | otherwise = myButLast xs
+
+-- 3. Find the K'th element of a list. The first element in the list is number 1.
+elementAt :: [a] -> Integer -> a
+elementAt [] k = error "No elements in an empty list!"
+elementAt (x:xs) k
+  | k == 1 = x
+  | otherwise = elementAt xs (k - 1)
