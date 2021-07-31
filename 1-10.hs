@@ -23,3 +23,8 @@ elementAt (x:xs) k
 myLength :: [a] -> Integer
 myLength [] = 0
 myLength (_:xs) = 1 + myLength xs
+
+-- 5. Reverse a list
+myReverse :: [a] -> [a]
+myReverse [] = []
+myReverse (x:xs) = myReverse xs ++ [x]
